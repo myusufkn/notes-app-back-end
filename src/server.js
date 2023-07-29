@@ -6,6 +6,13 @@ const routes = require('./routes');
 const init = async () => {
     const server = Hapi.server({
         port: 5000,
+
+        /*
+        process.env untuk meletakan suatu nilai ketika proses node dijalankan.
+        IP beralamat 0.0.0.0. Alamat tersebut merupakan alamat spesial yang digunakan agar komputer dapat diakses melalui seluruh alamat IP yang digunakan pada komputer.
+        karena IP (baik public atau private) dapat berubah.
+
+        */
         host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
         /*
         // Menerapkan CORS pada Web Server
