@@ -118,7 +118,7 @@ const deleteNoteByIdHandler = (request, h) => {
     // Lakukan pengecekan terhadap nilai index, pastikan nilainya tidak -1 bila hendak menghapus catatan.
     const index = notes.findIndex((note) => note.id === id);
 
-    if (index !== -1) {
+    if(index !== -1) {
         notes.splice(index, 1); // Untuk menghapus data pada array berdasarkan index, gunakan method array splice().
         const response = h.response({
             status: 'success',
@@ -130,13 +130,11 @@ const deleteNoteByIdHandler = (request, h) => {
 
     const response = h.response({
         status:'fail',
-        message: 'Catatan gagal dihapus, Id tidak ditemukan',
+        message: 'Catatan gagal diHapus, Id tidak ditemukan',
     });
     response.code(404); 
     return response;
-    
-    
-}
+};
 
 
 
