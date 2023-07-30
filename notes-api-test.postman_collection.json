@@ -304,8 +304,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('response status code should have 404 value', () => {",
-							"   pm.response.to.have.status(404);",
+							"pm.test('response status code should have 200 value', () => {",
+							"   pm.response.to.have.status(200);",
 							"});",
 							"",
 							"pm.test('response Content-Type header should have application/json value', () => {",
@@ -321,9 +321,9 @@
 							"   const responseJson = pm.response.json();",
 							" ",
 							"   pm.expect(responseJson).to.have.ownProperty('status');",
-							"   pm.expect(responseJson.status).to.equals('fail');",
+							"   pm.expect(responseJson.status).to.equals('success');",
 							"   pm.expect(responseJson).to.have.ownProperty('message');",
-							"   pm.expect(responseJson.message).to.equals('Catatan gagal diHapus, Id tidak ditemukan');",
+							"   pm.expect(responseJson.message).to.equals('Catatan Berhasil DiHapus');",
 							"}); ",
 							"",
 							"pm.test('when request the deleted note', () => {",
